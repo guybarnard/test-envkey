@@ -3,20 +3,8 @@ name: Github Action Example for EnvKey
 on: workflow_dispatch
 
 jobs:
-  build-staging:
+  build:
     runs-on: ubuntu-latest
-    environment: staging
-    steps:
-    - uses: synchealthlabs/github-action-envkey@main
-      env:
-        ENVKEY: ${{ secrets.ENVKEY }}
-    - name: Show environment
-      run: env
-
-jobs:
-  build-prod:
-    runs-on: ubuntu-latest
-    environment: production
     steps:
     - uses: synchealthlabs/github-action-envkey@main
       env:
